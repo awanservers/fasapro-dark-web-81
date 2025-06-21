@@ -9,6 +9,7 @@ export interface BlogPost {
   readTime: string;
   category: string;
   slug: string;
+  featuredImage: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -47,7 +48,8 @@ Achieving ISO 27001:2022 compliance requires dedication and systematic approach,
     date: '2024-01-15',
     readTime: '8 min read',
     category: 'Compliance',
-    slug: 'iso-27001-compliance-guide'
+    slug: 'iso-27001-compliance-guide',
+    featuredImage: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: '2',
@@ -80,7 +82,8 @@ Staying ahead of these trends requires proactive security measures and continuou
     date: '2024-01-10',
     readTime: '6 min read',
     category: 'Security',
-    slug: 'cybersecurity-trends-2024'
+    slug: 'cybersecurity-trends-2024',
+    featuredImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: '3',
@@ -117,7 +120,8 @@ Building scalable applications requires careful planning and the right architect
     date: '2024-01-05',
     readTime: '10 min read',
     category: 'Development',
-    slug: 'building-scalable-web-applications'
+    slug: 'building-scalable-web-applications',
+    featuredImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'
   }
 ];
 

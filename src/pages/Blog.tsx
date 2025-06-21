@@ -27,8 +27,14 @@ const Blog = () => {
               key={post.id}
               className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-300 group"
             >
-              <div className="h-48 bg-gradient-to-br from-blue-900/20 to-purple-900/20 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gray-800"></div>
+              {/* Featured Image */}
+              <div className="h-48 relative overflow-hidden">
+                <img
+                  src={post.featuredImage}
+                  alt={post.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
                 <div className="absolute bottom-4 left-4">
                   <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                     {post.category}
