@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Code, Smartphone, Search, Award, Clock, Users, FileText, Check } from 'lucide-react';
+import { getRecentBlogPosts } from '../data/blogPosts';
 
 const Home = () => {
   const services = [
@@ -97,26 +97,7 @@ const Home = () => {
     }
   ];
 
-  const blogPosts = [
-    {
-      title: 'Essential Steps for ISO 27001:2022 Compliance',
-      excerpt: 'A comprehensive guide to implementing ISO 27001:2022 standards in your organization, covering key requirements and best practices.',
-      readTime: '8 min read',
-      category: 'Compliance'
-    },
-    {
-      title: 'Cybersecurity Trends to Watch in 2024',
-      excerpt: 'Explore the latest cybersecurity threats and defense strategies that businesses need to be aware of in the coming year.',
-      readTime: '6 min read',
-      category: 'Security'
-    },
-    {
-      title: 'Building Scalable Web Applications',
-      excerpt: 'Learn the architectural principles and technologies that enable web applications to grow with your business needs.',
-      readTime: '10 min read',
-      category: 'Development'
-    }
-  ];
+  const blogPosts = getRecentBlogPosts(3);
 
   return (
     <div className="min-h-screen bg-gray-950">
@@ -398,7 +379,7 @@ const Home = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-gray-500 text-sm">{post.readTime}</span>
                     <Link
-                      to="#"
+                      to={`/blog/${post.slug}`}
                       className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors"
                     >
                       Read More
@@ -412,7 +393,7 @@ const Home = () => {
 
           <div className="text-center">
             <Link
-              to="#"
+              to="/blog"
               className="inline-flex items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
             >
               View All Articles
