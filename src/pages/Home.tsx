@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Code, Smartphone, Search, Award, Clock, Users, FileText, Check } from 'lucide-react';
@@ -81,6 +82,39 @@ const Home = () => {
       step: '04',
       title: 'Deployment & Ongoing Support',
       description: 'Implementation with minimal disruption, followed by continuous monitoring and dedicated support.'
+    }
+  ];
+
+  const clientIndustries = [
+    {
+      icon: '/lovable-uploads/50257192-b5b4-4e40-b4af-c689859e1ff8.png',
+      name: 'Technology & Startups',
+      description: 'Innovation-driven companies'
+    },
+    {
+      icon: '/lovable-uploads/dfe681f7-be47-4720-b512-9d43f5da363f.png',
+      name: 'Retail & E-commerce',
+      description: 'Digital commerce solutions'
+    },
+    {
+      icon: '/lovable-uploads/299a883f-c704-46d8-876d-acec16bf6bed.png',
+      name: 'Financial Services',
+      description: 'Banking & finance sector'
+    },
+    {
+      icon: '/lovable-uploads/c0945098-0a3a-484a-8ce4-53d2d2dce145.png',
+      name: 'Education',
+      description: 'Academic institutions'
+    },
+    {
+      icon: '/lovable-uploads/25c4525d-2c34-4ce6-a5a9-bbdb065adbe1.png',
+      name: 'Healthcare',
+      description: 'Medical & healthcare providers'
+    },
+    {
+      icon: '/lovable-uploads/226cb6bf-e34a-402b-ab98-02203c51c167.png',
+      name: 'Professional Services',
+      description: 'Consulting & business services'
     }
   ];
 
@@ -259,27 +293,37 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Client Logos Section */}
+      {/* Client Industries Section */}
       <section className="py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Trusted by Clients and Partners
+              Trusted Across Industries
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              We're proud to work with industry-leading organizations across various sectors.
+              We serve diverse sectors with specialized IT solutions tailored to each industry's unique needs.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+            {clientIndustries.map((industry, index) => (
               <div
-                key={item}
-                className="bg-gray-800 rounded-lg p-6 flex items-center justify-center h-20 hover:bg-gray-700 transition-colors duration-300"
+                key={index}
+                className="bg-gray-800 rounded-lg p-6 text-center hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 group"
               >
-                <div className="text-gray-400 font-semibold">
-                  Client {item}
+                <div className="flex items-center justify-center h-16 mb-4">
+                  <img 
+                    src={industry.icon} 
+                    alt={industry.name}
+                    className="w-12 h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                  />
                 </div>
+                <h4 className="text-white font-semibold text-sm mb-2 group-hover:text-blue-400 transition-colors">
+                  {industry.name}
+                </h4>
+                <p className="text-gray-400 text-xs">
+                  {industry.description}
+                </p>
               </div>
             ))}
           </div>
