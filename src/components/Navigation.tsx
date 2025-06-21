@@ -89,12 +89,12 @@ const Navigation = () => {
               Gallery
             </Link>
             <Link
-              to="/contact"
+              to="/blog"
               className={`text-gray-300 hover:text-white transition-colors ${
-                isActive('/contact') ? 'text-white' : ''
+                isActive('/blog') ? 'text-white' : ''
               }`}
             >
-              Contact
+              Blog
             </Link>
             
             <Link
@@ -139,8 +139,8 @@ const Navigation = () => {
               <Link to="/gallery" className="text-gray-300 hover:text-white transition-colors">
                 Gallery
               </Link>
-              <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">
-                Contact
+              <Link to="/blog" className="text-gray-300 hover:text-white transition-colors">
+                Blog
               </Link>
               <Link
                 to="/contact"

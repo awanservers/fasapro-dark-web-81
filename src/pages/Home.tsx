@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Code, Smartphone, Search, Award, Clock, Users, FileText, Check } from 'lucide-react';
@@ -392,7 +391,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Insights & Resources
+              Latest Insights & Resources
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Stay updated with the latest trends, best practices, and insights from our experts.
@@ -405,14 +404,21 @@ const Home = () => {
                 key={index}
                 className="bg-gray-950 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-300 group"
               >
-                <div className="h-48 bg-gradient-to-br from-blue-900/20 to-purple-900/20 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gray-800"></div>
+                {/* Featured Image */}
+                <div className="h-48 relative overflow-hidden">
+                  <img
+                    src={post.featuredImage}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
                     <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {post.category}
                     </span>
                   </div>
                 </div>
+                
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors">
                     {post.title}
