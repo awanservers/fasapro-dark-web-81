@@ -18,6 +18,9 @@ jobs:
     - name: Build Vite Project
       run: npm run build
 
+    - name: Rename dist to app
+      run: mv dist app
+
     - name: Deploy via SCP
       uses: appleboy/scp-action@v0.1.7
       with:
