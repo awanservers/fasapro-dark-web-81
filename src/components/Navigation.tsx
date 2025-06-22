@@ -1,5 +1,3 @@
-
-
 import React, { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
@@ -49,9 +47,11 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">F</span>
-            </div>
+            <img 
+              src="/logo_fct.png" 
+              alt="Fasapro Logo" 
+              className="w-8 h-8 object-contain"
+            />
             <span className="text-white text-xl font-bold">Fasapro</span>
           </Link>
 
@@ -232,4 +232,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-

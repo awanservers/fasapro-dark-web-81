@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
@@ -11,9 +10,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">F</span>
-              </div>
+              <img 
+                src="/logo_fct.png" 
+                alt="Fasapro Logo" 
+                className="w-8 h-8 object-contain"
+              />
               <span className="text-white text-xl font-bold">Fasapro</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
