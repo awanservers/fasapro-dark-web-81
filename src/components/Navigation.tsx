@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, Menu, X } from 'lucide-react';
 
@@ -7,6 +7,7 @@ const Navigation = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const services = [
     { name: 'Website Development', path: '/services/website-development' },
@@ -16,6 +17,20 @@ const Navigation = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleMouseEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
+    }
+    setIsServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 150); // 150ms delay before closing
+  };
 
   return (
     <nav className="bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 sticky top-0 z-50">
@@ -51,8 +66,8 @@ const Navigation = () => {
             {/* Services Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="flex items-center text-gray-300 hover:text-white transition-colors">
                 Services
@@ -60,7 +75,7 @@ const Navigation = () => {
               </button>
               
               {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-gray-800 rounded-lg shadow-xl border border-gray-700 overflow-hidden">
+                <div className="absolute top-full left-0 mt-1 w-64 bg-gray-800 rounded-lg shadow-xl border border-gray-700 overflow-hidden z-50">
                   <Link
                     to="/services"
                     className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-700 transition-colors border-b border-gray-700"
