@@ -1,6 +1,7 @@
 
+
 import React from 'react';
-import { Shield, Users, Award, Target, Certificate, Network, Settings, CheckCircle } from 'lucide-react';
+import { Shield, Users, Award, Target, Network, Settings, CheckCircle } from 'lucide-react';
 
 const About = () => {
   const values = [
@@ -196,3 +197,4 @@ const About = () => {
 };
 
 export default About;
+

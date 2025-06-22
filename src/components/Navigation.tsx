@@ -1,11 +1,13 @@
 
+
 import React, { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const location = useLocation();
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -30,6 +32,15 @@ const Navigation = () => {
     hoverTimeoutRef.current = setTimeout(() => {
       setIsServicesOpen(false);
     }, 150); // 150ms delay before closing
+  };
+
+  const handleMobileMenuItemClick = () => {
+    setIsMobileMenuOpen(false);
+    setIsMobileServicesOpen(false);
+  };
+
+  const toggleMobileServices = () => {
+    setIsMobileServicesOpen(!isMobileServicesOpen);
   };
 
   return (
@@ -131,35 +142,84 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-gray-800 rounded-lg mt-2 mb-4 p-4">
-            <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-gray-300 hover:text-white transition-colors">
+          <div className="md:hidden bg-gray-800 rounded-lg mt-2 mb-4 p-4 shadow-xl border border-gray-700">
+            <div className="flex flex-col space-y-2">
+              <Link 
+                to="/" 
+                className="text-gray-300 hover:text-white transition-colors py-3 px-2 rounded-md hover:bg-gray-700"
+                onClick={handleMobileMenuItemClick}
+              >
                 Home
               </Link>
-              <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
+              
+              <Link 
+                to="/about" 
+                className="text-gray-300 hover:text-white transition-colors py-3 px-2 rounded-md hover:bg-gray-700"
+                onClick={handleMobileMenuItemClick}
+              >
                 About
               </Link>
-              <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                All Services
-              </Link>
-              {services.map((service) => (
-                <Link
-                  key={service.path}
-                  to={service.path}
-                  className="text-gray-400 hover:text-white transition-colors pl-4"
+              
+              {/* Mobile Services Section */}
+              <div className="border-t border-gray-700 pt-2">
+                <button
+                  onClick={toggleMobileServices}
+                  className="flex items-center justify-between w-full text-gray-300 hover:text-white transition-colors py-3 px-2 rounded-md hover:bg-gray-700"
                 >
-                  {service.name}
-                </Link>
-              ))}
-              <Link to="/gallery" className="text-gray-300 hover:text-white transition-colors">
+                  <span>Services</span>
+                  <ChevronRight 
+                    className={`h-4 w-4 transition-transform duration-200 ${
+                      isMobileServicesOpen ? 'rotate-90' : ''
+                    }`} 
+                  />
+                </button>
+                
+                {/* Collapsible Services Submenu */}
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  isMobileServicesOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}>
+                  <div className="ml-4 mt-2 space-y-1 border-l-2 border-gray-600 pl-4">
+                    <Link
+                      to="/services"
+                      className="block text-gray-400 hover:text-white transition-colors py-2 px-2 rounded-md hover:bg-gray-700/50 text-sm"
+                      onClick={handleMobileMenuItemClick}
+                    >
+                      All Services
+                    </Link>
+                    {services.map((service) => (
+                      <Link
+                        key={service.path}
+                        to={service.path}
+                        className="block text-gray-400 hover:text-white transition-colors py-2 px-2 rounded-md hover:bg-gray-700/50 text-sm"
+                        onClick={handleMobileMenuItemClick}
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              <Link 
+                to="/gallery" 
+                className="text-gray-300 hover:text-white transition-colors py-3 px-2 rounded-md hover:bg-gray-700"
+                onClick={handleMobileMenuItemClick}
+              >
                 Gallery
               </Link>
-              <Link to="/blog" className="text-gray-300 hover:text-white transition-colors">
+              
+              <Link 
+                to="/blog" 
+                className="text-gray-300 hover:text-white transition-colors py-3 px-2 rounded-md hover:bg-gray-700"
+                onClick={handleMobileMenuItemClick}
+              >
                 Blog
               </Link>
+              
               <Link
                 to="/contact"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-lg text-center"
+                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg text-center mt-4 hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+                onClick={handleMobileMenuItemClick}
               >
                 Get Started
               </Link>
@@ -172,3 +232,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
