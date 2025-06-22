@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Shield, Users, Award, Target } from 'lucide-react';
+import { Shield, Users, Award, Target, Certificate, Network, Settings, CheckCircle } from 'lucide-react';
 
 const About = () => {
   const values = [
@@ -26,24 +26,26 @@ const About = () => {
     }
   ];
 
-  const team = [
+  const certifications = [
     {
-      name: 'Sarah Johnson',
-      role: 'CEO & Founder',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b287?w=400&h=400&fit=crop&crop=face',
-      description: 'Cybersecurity expert with 15+ years in IT consulting and ISO 27001 implementation.'
+      name: 'ISO/IEC 27001:2022 Implementer',
+      icon: Shield,
+      description: 'Information Security Management Systems implementation and audit expertise'
     },
     {
-      name: 'Michael Chen',
-      role: 'CTO',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-      description: 'Full-stack developer specializing in modern web technologies and mobile applications.'
+      name: 'NIST Cybersecurity Framework',
+      icon: CheckCircle,
+      description: 'Comprehensive cybersecurity risk management and compliance framework'
     },
     {
-      name: 'Emily Rodriguez',
-      role: 'Lead Security Auditor',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
-      description: 'Certified ISO 27001 auditor with expertise in compliance and risk assessment.'
+      name: 'COBIT',
+      icon: Settings,
+      description: 'IT governance and management framework for enterprise technology'
+    },
+    {
+      name: 'MTCNA (MikroTik Certified Network Associate)',
+      icon: Network,
+      description: 'Advanced networking and routing solutions certification'
     }
   ];
 
@@ -157,33 +159,32 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Certifications Section */}
       <section className="py-24 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Meet Our Leadership Team
+              Our Certifications
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Experienced professionals dedicated to delivering exceptional IT solutions.
+              Professional certifications that validate our expertise in IT security, governance, and network management.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="bg-gray-900 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 border border-gray-800"
+                className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-500/30 transition-all duration-300 hover:transform hover:scale-105"
               >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
-                  <p className="text-blue-400 mb-4 font-medium">{member.role}</p>
-                  <p className="text-gray-400 leading-relaxed">{member.description}</p>
+                <div className="flex items-start space-x-4">
+                  <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-lg flex-shrink-0">
+                    <cert.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-3">{cert.name}</h3>
+                    <p className="text-gray-400 leading-relaxed">{cert.description}</p>
+                  </div>
                 </div>
               </div>
             ))}
