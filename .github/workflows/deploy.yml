@@ -25,5 +25,5 @@ jobs:
         username: ${{ secrets.VPS_USER }}
         key: ${{ secrets.VPS_KEY }}
         port: ${{ secrets.VPS_PORT }}
-        source: "dist/*"
+        source: "app/*"
         target: "/home/yanuri/fasapro/"
