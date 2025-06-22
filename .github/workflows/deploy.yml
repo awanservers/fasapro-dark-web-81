@@ -21,6 +21,11 @@ jobs:
     - name: Rename dist to app
       run: mv dist app
 
+    - name: Set file permissions to 755
+      run: |
+        find app/ -type d -exec chmod 755 {} \;
+        find app/ -type f -exec chmod 644 {} \;
+
     - name: Deploy via SCP
       uses: appleboy/scp-action@v0.1.7
       with:
