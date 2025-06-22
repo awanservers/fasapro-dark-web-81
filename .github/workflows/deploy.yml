@@ -1,0 +1,29 @@
+name: Deploy React + Vite to VPS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Build Vite Project
+      run: npm run build
+
+    - name: Deploy via SCP
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.VPS_HOST }}
+        username: ${{ secrets.VPS_USER }}
+        key: ${{ secrets.VPS_KEY }}
+        port: ${{ secrets.VPS_PORT }}
+        source: "dist/*"
+        target: "/var/www/fasaprogit add  "
