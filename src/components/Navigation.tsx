@@ -45,14 +45,13 @@ const Navigation = () => {
     <nav className="bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          {/* Logo - Image Only */}
+          <Link to="/" className="flex items-center">
             <img 
               src="/logo_fct.png" 
               alt="Fasapro Logo" 
-              className="w-8 h-8 object-contain"
+              className="w-10 h-10 object-contain hover:scale-105 transition-transform duration-200"
             />
-            <span className="text-white text-xl font-bold">Fasapro</span>
           </Link>
 
           {/* Desktop Navigation */}
