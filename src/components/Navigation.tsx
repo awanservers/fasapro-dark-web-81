@@ -46,13 +46,17 @@ const Navigation = () => {
     <nav className="bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo - Larger and Enhanced */}
-          <Link to="/" className="flex items-center p-2">
+          {/* Logo with Company Name */}
+          <Link to="/" className="flex items-center space-x-3 p-2">
             <img 
-              src="/logo_fct.png" 
-              alt="Fasapro Logo" 
-              className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-105 transition-transform duration-300 drop-shadow-lg"
+              src="/lovable-uploads/4f4c2a19-1937-48bb-821d-ce787f702dce.png" 
+              alt="Fasa Centra Technologies Logo" 
+              className="w-12 h-12 md:w-16 md:h-16 object-contain hover:scale-105 transition-transform duration-300 drop-shadow-lg"
             />
+            <div className="flex flex-col">
+              <span className="text-white text-lg md:text-xl font-bold leading-tight">Fasa Centra</span>
+              <span className="text-gray-300 text-xs md:text-sm font-medium leading-tight">Technologies Ltd.</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
