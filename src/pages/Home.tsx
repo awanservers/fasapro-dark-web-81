@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Code, Smartphone, Search, Award, Clock, Users, FileText, Check } from 'lucide-react';
+import { ArrowRight, Shield, Code, Smartphone, Search, Award, Clock, Users, FileText, Check, Star, Sparkles, Heart, Zap } from 'lucide-react';
 import { getRecentBlogPosts } from '../data/blogPosts';
 
 const Home = () => {
@@ -134,50 +134,128 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-950">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
+      {/* Enhanced Hero Section */}
+      <section className="relative overflow-hidden min-h-screen flex items-center">
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          {/* Base gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/20 to-indigo-900/30"></div>
+          
+          {/* Animated gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 animate-pulse"></div>
+          
+          {/* Floating particles */}
+          <div className="absolute inset-0">
+            {[...Array(20)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${3 + Math.random() * 2}s`
+                }}
+              ></div>
+            ))}
+          </div>
+          
+          {/* Geometric shapes */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-indigo-500/10 to-blue-500/10 rounded-full blur-xl animate-pulse delay-2000"></div>
+        </div>
+
+        {/* Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 animate-fade-in">
-              Professional IT Solutions for
-              <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Modern Businesses
+            {/* Trust indicators */}
+            <div className="flex items-center justify-center mb-8 space-x-6">
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+                <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                <span className="text-white text-sm font-medium">5.0 Client Rating</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+                <Shield className="h-4 w-4 text-green-400" />
+                <span className="text-white text-sm font-medium">ISO 27001 Certified</span>
+              </div>
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+                <Heart className="h-4 w-4 text-red-400 fill-current" />
+                <span className="text-white text-sm font-medium">100+ Happy Clients</span>
+              </div>
+            </div>
+
+            {/* Main heading with enhanced styling */}
+            <h1 className="text-4xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+              <span className="block">Transform Your Business</span>
+              <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+                with Confidence
               </span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Fasapro delivers cutting-edge IT consulting, cybersecurity solutions, and digital transformation 
-              services to help your business thrive in the digital age.
+
+            {/* Enhanced subtitle */}
+            <p className="text-xl lg:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Partner with <span className="text-blue-400 font-semibold">Fasapro</span> for cutting-edge IT solutions that 
+              <span className="text-purple-400 font-semibold"> empower growth</span>, 
+              <span className="text-green-400 font-semibold"> ensure security</span>, and 
+              <span className="text-pink-400 font-semibold"> drive success</span> in the digital age.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            {/* Enhanced CTA buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Link
                 to="/contact"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                className="group relative bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 flex items-center justify-center"
               >
-                Get Started Today
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <Sparkles className="mr-3 h-6 w-6 group-hover:animate-spin" />
+                Start Your Journey Today
+                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                
+                {/* Animated border */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm -z-10"></div>
               </Link>
+              
               <Link
                 to="/services"
-                className="border border-gray-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300"
+                className="group border-2 border-white/30 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm flex items-center justify-center"
               >
-                View Our Services
+                <Zap className="mr-3 h-6 w-6 group-hover:text-yellow-400 transition-colors" />
+                Explore Our Services
               </Link>
+            </div>
+
+            {/* Social proof section */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 max-w-4xl mx-auto">
+              <div className="flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0">
+                <div className="text-center lg:text-left">
+                  <p className="text-gray-300 text-lg mb-2">Trusted by industry leaders</p>
+                  <div className="flex items-center justify-center lg:justify-start space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    ))}
+                    <span className="ml-2 text-white font-semibold">5.0 average rating</span>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                  {stats.map((stat, index) => (
+                    <div key={index} className="group">
+                      <div className="text-2xl lg:text-3xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                        {stat.number}
+                      </div>
+                      <div className="text-gray-400 text-sm">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-gray-400">{stat.label}</div>
-              </div>
-            ))}
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
