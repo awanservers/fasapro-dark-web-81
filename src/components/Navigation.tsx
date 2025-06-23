@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
@@ -44,13 +45,13 @@ const Navigation = () => {
   return (
     <nav className="bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo - Image Only */}
-          <Link to="/" className="flex items-center">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo - Larger and Enhanced */}
+          <Link to="/" className="flex items-center p-2">
             <img 
               src="/logo_fct.png" 
               alt="Fasapro Logo" 
-              className="w-10 h-10 object-contain hover:scale-105 transition-transform duration-200"
+              className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-105 transition-transform duration-300 drop-shadow-lg"
             />
           </Link>
 
