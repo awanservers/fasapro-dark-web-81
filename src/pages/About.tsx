@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Target, Award, Globe, Shield, Code, Clock, CheckCircle } from 'lucide-react';
+import { ArrowRight, Users, Target, Award, Globe, Shield, Code, Clock, CheckCircle, Sparkles } from 'lucide-react';
+import { Timeline } from '@/components/ui/timeline';
 
 const About = () => {
   const values = [
@@ -85,6 +86,57 @@ const About = () => {
     { number: '50+', label: 'Happy Clients' },
     { number: '5+', label: 'Years Experience' },
     { number: '24/7', label: 'Support Available' }
+  ];
+
+  const timelineItems = [
+    {
+      date: "2024-01-15",
+      title: "ISO 27001 Certification",
+      description: "Achieved ISO 27001:2022 certification, reinforcing our commitment to information security",
+      icon: <Shield className="h-3 w-3" />,
+    },
+    {
+      date: "2023-08-20",
+      title: "Mobile Development Expansion",
+      description: "Launched comprehensive mobile app development services for iOS and Android",
+      icon: <Code className="h-3 w-3" />,
+    },
+    {
+      date: "2023-03-10",
+      title: "50+ Client Milestone",
+      description: "Reached milestone of serving over 50 satisfied clients across various industries",
+      icon: <Users className="h-3 w-3" />,
+    },
+    {
+      date: "2022-11-05",
+      title: "Cloud Infrastructure Focus",
+      description: "Expanded services to include comprehensive cloud migration and AWS solutions",
+      icon: <Sparkles className="h-3 w-3" />,
+    },
+    {
+      date: "2022-06-01",
+      title: "Cybersecurity Division",
+      description: "Established dedicated cybersecurity consulting division with certified experts",
+      icon: <Shield className="h-3 w-3" />,
+    },
+    {
+      date: "2021-09-15",
+      title: "Team Expansion",
+      description: "Doubled our team size to meet growing demand for IT consulting services",
+      icon: <Users className="h-3 w-3" />,
+    },
+    {
+      date: "2020-03-01",
+      title: "Remote Services Launch",
+      description: "Adapted to provide fully remote IT consulting and support services",
+      icon: <Globe className="h-3 w-3" />,
+    },
+    {
+      date: "2019-01-01",
+      title: "Fasapro Founded",
+      description: "Founded Fasapro with a mission to bridge technology gaps for businesses",
+      icon: <Sparkles className="h-3 w-3" />,
+    }
   ];
 
   return (
@@ -193,6 +245,33 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl"></div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Our Journey section */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Our Journey
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Key milestones and achievements that have shaped Fasapro into the trusted IT consulting partner we are today.
+            </p>
+          </div>
+
+          <Timeline
+            items={timelineItems}
+            initialCount={4}
+            showMoreText="Load More Milestones"
+            showLessText="Show Less"
+            dotClassName="bg-gradient-to-b from-blue-500 to-purple-600 ring-1 ring-gray-700"
+            lineClassName="border-l border-gray-700"
+            titleClassName="text-white"
+            descriptionClassName="text-gray-400"
+            dateClassName="text-blue-400"
+            className="text-white"
+          />
         </div>
       </section>
 
