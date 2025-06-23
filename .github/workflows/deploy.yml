@@ -1,7 +1,8 @@
 name: Deploy React + Vite to VPS
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [main]
 
 jobs:
   deploy:
