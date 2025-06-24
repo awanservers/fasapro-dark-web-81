@@ -74,7 +74,7 @@ const Home = () => {
     },
     {
       step: '03',
-      title: 'Solution Development',
+4 title: 'Solution Development',
       description: 'We design and develop customized solutions tailored to your specific requirements and industry standards.'
     },
     {
@@ -117,16 +117,34 @@ const Home = () => {
     }
   ];
 
-  const testimonials = [
+  const certifications = [
     {
-      quote: "Fasapro transformed our IT infrastructure with their expert ISO 27001 implementation. Their team's professionalism and attention to detail exceeded our expectations.",
-      author: "Sarah Johnson",
-      position: "CTO, TechCorp Solutions"
+      title: 'ISO/IEC 27001:2022',
+      subtitle: 'BSI Lead Implementer',
+      description: 'Information Security Management Systems implementation and auditing expertise',
+      icon: Shield,
+      color: 'from-blue-500 to-cyan-500'
     },
     {
-      quote: "The mobile app development project was delivered on time and within budget. Fasapro's communication and technical expertise made the entire process seamless.",
-      author: "Michael Chen",
-      position: "CEO, Digital Ventures"
+      title: 'NIST Framework',
+      subtitle: 'Cybersecurity Framework',
+      description: 'National Institute of Standards and Technology cybersecurity best practices',
+      icon: Award,
+      color: 'from-purple-500 to-violet-500'
+    },
+    {
+      title: 'COBIT',
+      subtitle: 'IT Governance Framework',
+      description: 'Control Objectives for Information and Related Technologies governance',
+      icon: FileText,
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      title: 'MTCNA',
+      subtitle: 'MikroTik Certified',
+      description: 'Network Administrator certification for advanced networking solutions',
+      icon: Users,
+      color: 'from-orange-500 to-red-500'
     }
   ];
 
@@ -325,6 +343,73 @@ const Home = () => {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Certifications Section */}
+      <section className="py-24 bg-gray-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Our Professional Certifications
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Backed by industry-leading certifications and frameworks to ensure the highest standards of service delivery.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {certifications.map((cert, index) => (
+              <div
+                key={index}
+                className="group bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
+              >
+                <div className={`bg-gradient-to-r ${cert.color} w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <cert.icon className="h-8 w-8 text-white" />
+                </div>
+                
+                <div className="text-center">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    {cert.title}
+                  </h3>
+                  <div className={`bg-gradient-to-r ${cert.color} bg-clip-text text-transparent font-semibold text-sm mb-4`}>
+                    {cert.subtitle}
+                  </div>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {cert.description}
+                  </p>
+                </div>
+
+                {/* Verification Badge */}
+                <div className="flex items-center justify-center mt-6">
+                  <div className="flex items-center bg-green-500/10 border border-green-500/20 rounded-full px-3 py-1">
+                    <Check className="h-4 w-4 text-green-400 mr-2" />
+                    <span className="text-green-400 text-xs font-medium">Certified</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Additional Info */}
+          <div className="mt-16 text-center">
+            <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-2xl p-8 border border-blue-500/20">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Commitment to Excellence
+              </h3>
+              <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+                Our team continuously invests in professional development and maintains certifications 
+                to deliver cutting-edge solutions that meet the highest industry standards.
+              </p>
+              <Link
+                to="/about"
+                className="inline-flex items-center mt-6 text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+              >
+                Learn More About Our Team
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
