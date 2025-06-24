@@ -74,7 +74,7 @@ const Home = () => {
     },
     {
       step: '03',
-4 title: 'Solution Development',
+      title: 'Solution Development',
       description: 'We design and develop customized solutions tailored to your specific requirements and industry standards.'
     },
     {
@@ -145,6 +145,19 @@ const Home = () => {
       description: 'Network Administrator certification for advanced networking solutions',
       icon: Users,
       color: 'from-orange-500 to-red-500'
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "Fasapro transformed our IT infrastructure with their expert cybersecurity solutions. Their ISO 27001 expertise was invaluable in achieving our compliance goals.",
+      author: "Sarah Johnson",
+      position: "CTO, TechStart Inc."
+    },
+    {
+      quote: "The team's professionalism and technical expertise exceeded our expectations. They delivered a robust mobile application that perfectly meets our business needs.",
+      author: "Michael Chen",
+      position: "CEO, InnovateCorp"
     }
   ];
 
