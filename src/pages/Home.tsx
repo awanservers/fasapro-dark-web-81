@@ -9,25 +9,41 @@ const Home = () => {
       icon: Code,
       title: 'Website Development',
       description: 'Custom web solutions built with modern technologies for optimal performance and user experience.',
-      link: '/services/website-development'
+      link: '/services/website-development',
+      gradient: 'from-green-400 to-green-600',
+      hoverGradient: 'from-green-500 to-green-700',
+      bgGradient: 'from-green-500/10 to-green-600/10',
+      borderColor: 'border-green-500/20 hover:border-green-400/50'
     },
     {
       icon: Smartphone,
       title: 'Mobile App Development',
       description: 'Native and cross-platform mobile applications designed for iOS and Android platforms.',
-      link: '/services/mobile-app-development'
+      link: '/services/mobile-app-development',
+      gradient: 'from-purple-400 to-purple-600',
+      hoverGradient: 'from-purple-500 to-purple-700',
+      bgGradient: 'from-purple-500/10 to-purple-600/10',
+      borderColor: 'border-purple-500/20 hover:border-purple-400/50'
     },
     {
       icon: Shield,
       title: 'IT Auditing',
       description: 'Comprehensive security assessments and regulatory compliance including ISO 27001 certification.',
-      link: '/services/it-auditing'
+      link: '/services/it-auditing',
+      gradient: 'from-emerald-400 to-emerald-600',
+      hoverGradient: 'from-emerald-500 to-emerald-700',
+      bgGradient: 'from-emerald-500/10 to-emerald-600/10',
+      borderColor: 'border-emerald-500/20 hover:border-emerald-400/50'
     },
     {
       icon: Search,
       title: 'IT Consulting',
       description: 'Strategic cybersecurity guidance and digital transformation consulting services.',
-      link: '/services/it-consulting'
+      link: '/services/it-consulting',
+      gradient: 'from-violet-400 to-violet-600',
+      hoverGradient: 'from-violet-500 to-violet-700',
+      bgGradient: 'from-violet-500/10 to-violet-600/10',
+      borderColor: 'border-violet-500/20 hover:border-violet-400/50'
     }
   ];
 
@@ -138,18 +154,18 @@ const Home = () => {
       <section className="relative overflow-hidden min-h-screen flex items-center">
         {/* Animated Background */}
         <div className="absolute inset-0">
-          {/* Base gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/20 to-indigo-900/30"></div>
+          {/* Base gradient with green/purple theme */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-900/30 via-purple-900/20 to-violet-900/30"></div>
           
           {/* Animated gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 via-purple-600/10 to-violet-600/10 animate-pulse"></div>
           
           {/* Floating particles */}
           <div className="absolute inset-0">
             {[...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-blue-400/20 rounded-full animate-pulse"
+                className="absolute w-2 h-2 bg-green-400/20 rounded-full animate-pulse"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -160,10 +176,10 @@ const Home = () => {
             ))}
           </div>
           
-          {/* Geometric shapes */}
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-indigo-500/10 to-blue-500/10 rounded-full blur-xl animate-pulse delay-2000"></div>
+          {/* Geometric shapes with green/purple theme */}
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-green-500/10 to-purple-500/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-purple-500/10 to-violet-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-emerald-500/10 to-green-500/10 rounded-full blur-xl animate-pulse delay-2000"></div>
         </div>
 
         {/* Content */}
@@ -188,31 +204,31 @@ const Home = () => {
             {/* Main heading with enhanced styling */}
             <h1 className="text-4xl lg:text-7xl font-bold text-white mb-8 leading-tight">
               <span className="block">Transform Your Business</span>
-              <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+              <span className="block bg-gradient-to-r from-green-400 via-purple-400 to-violet-400 bg-clip-text text-transparent animate-pulse">
                 with Confidence
               </span>
             </h1>
 
             {/* Enhanced subtitle */}
             <p className="text-xl lg:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Partner with <span className="text-blue-400 font-semibold">Fasapro</span> for cutting-edge IT solutions that 
+              Partner with <span className="text-green-400 font-semibold">Fasapro</span> for cutting-edge IT solutions that 
               <span className="text-purple-400 font-semibold"> empower growth</span>, 
-              <span className="text-green-400 font-semibold"> ensure security</span>, and 
-              <span className="text-pink-400 font-semibold"> drive success</span> in the digital age.
+              <span className="text-emerald-400 font-semibold"> ensure security</span>, and 
+              <span className="text-violet-400 font-semibold"> drive success</span> in the digital age.
             </p>
 
             {/* Enhanced CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Link
                 to="/contact"
-                className="group relative bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 flex items-center justify-center"
+                className="group relative bg-gradient-to-r from-green-500 via-purple-500 to-violet-500 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:from-green-600 hover:via-purple-600 hover:to-violet-600 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 flex items-center justify-center"
               >
                 <Sparkles className="mr-3 h-6 w-6 group-hover:animate-spin" />
                 Start Your Journey Today
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
                 
                 {/* Animated border */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm -z-10"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-400 via-purple-400 to-violet-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm -z-10"></div>
               </Link>
               
               <Link
@@ -240,7 +256,7 @@ const Home = () => {
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                   {stats.map((stat, index) => (
                     <div key={index} className="group">
-                      <div className="text-2xl lg:text-3xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                      <div className="text-2xl lg:text-3xl font-bold text-white mb-1 group-hover:text-green-400 transition-colors">
                         {stat.number}
                       </div>
                       <div className="text-gray-400 text-sm">{stat.label}</div>
@@ -260,40 +276,100 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24 bg-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Our Core Services
+      {/* Enhanced Services Section */}
+      <section className="py-32 bg-gray-950 relative overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-green-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-purple-500/5 to-violet-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center bg-gradient-to-r from-green-500/10 to-purple-500/10 rounded-full px-6 py-2 border border-green-500/20 mb-6">
+              <Sparkles className="h-4 w-4 text-green-400 mr-2" />
+              <span className="text-green-400 font-medium">Our Core Services</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Comprehensive IT Solutions
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Comprehensive IT solutions tailored to meet your business needs and drive digital innovation.
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              From cutting-edge development to robust security, we deliver end-to-end IT solutions 
+              that transform businesses and drive digital innovation.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Link
+              <div
                 key={index}
-                to={service.link}
-                className="group bg-gray-900 rounded-xl p-8 hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 border border-gray-800 hover:border-blue-500/50"
+                className="group relative"
+                style={{
+                  animationDelay: `${index * 150}ms`
+                }}
               >
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-                <div className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
-                  <span className="text-sm font-medium">Learn More</span>
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
+                {/* Background glow effect */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${service.bgGradient} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110`}></div>
+                
+                <Link
+                  to={service.link}
+                  className={`relative block bg-gray-900/80 backdrop-blur-sm rounded-2xl p-8 border ${service.borderColor} transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 h-full`}
+                >
+                  {/* Icon with enhanced styling */}
+                  <div className="relative mb-8">
+                    <div className={`bg-gradient-to-r ${service.gradient} w-16 h-16 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg`}>
+                      <service.icon className="h-8 w-8 text-white" />
+                    </div>
+                    {/* Icon glow effect */}
+                    <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} w-16 h-16 rounded-2xl opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300`}></div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-purple-400 group-hover:bg-clip-text transition-all duration-300">
+                    {service.title}
+                  </h3>
+                  
+                  <p className="text-gray-400 mb-8 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                    {service.description}
+                  </p>
+                  
+                  {/* Enhanced CTA */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center text-gray-500 group-hover:text-green-400 transition-colors duration-300">
+                      <span className="text-sm font-medium">Learn More</span>
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
+                    
+                    {/* Floating indicator */}
+                    <div className={`w-3 h-3 bg-gradient-to-r ${service.gradient} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 animate-pulse`}></div>
+                  </div>
+
+                  {/* Bottom accent line */}
+                  <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-2xl`}></div>
+                </Link>
+              </div>
             ))}
+          </div>
+
+          {/* Enhanced CTA below services */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center bg-gradient-to-r from-green-900/50 to-purple-900/50 backdrop-blur-sm rounded-2xl p-8 border border-green-500/20">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Ready to Transform Your Business?
+                </h3>
+                <p className="text-gray-300 mb-6 max-w-2xl">
+                  Let's discuss how our comprehensive IT solutions can drive your success
+                </p>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center bg-gradient-to-r from-green-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-green-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Get Started Today
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -316,10 +392,10 @@ const Home = () => {
                 key={index}
                 className="text-center group hover:transform hover:scale-105 transition-all duration-300"
               >
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-gradient-to-r from-green-500 to-purple-600 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-green-400 transition-colors">
                   {feature.title}
                 </h3>
                 <p className="text-gray-400 leading-relaxed">
@@ -346,9 +422,9 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <div key={index} className="relative">
-                <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 h-full">
+                <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-green-500/50 transition-all duration-300 h-full">
                   <div className="flex items-center mb-6">
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-lg w-12 h-12 rounded-lg flex items-center justify-center">
+                    <div className="bg-gradient-to-r from-green-500 to-purple-600 text-white font-bold text-lg w-12 h-12 rounded-lg flex items-center justify-center">
                       {step.step}
                     </div>
                   </div>
@@ -361,7 +437,7 @@ const Home = () => {
                 </div>
                 {index < processSteps.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                    <ArrowRight className="h-6 w-6 text-blue-400" />
+                    <ArrowRight className="h-6 w-6 text-green-400" />
                   </div>
                 )}
               </div>
@@ -395,7 +471,7 @@ const Home = () => {
                     className="w-12 h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
-                <h4 className="text-white font-semibold text-sm mb-2 group-hover:text-blue-400 transition-colors">
+                <h4 className="text-white font-semibold text-sm mb-2 group-hover:text-green-400 transition-colors">
                   {industry.name}
                 </h4>
                 <p className="text-gray-400 text-xs">
@@ -423,10 +499,10 @@ const Home = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-blue-500/50 transition-all duration-300"
+                className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-green-500/50 transition-all duration-300"
               >
                 <div className="flex items-start mb-6">
-                  <div className="flex text-blue-400 mr-4">
+                  <div className="flex text-green-400 mr-4">
                     {[...Array(5)].map((_, i) => (
                       <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -438,7 +514,7 @@ const Home = () => {
                   "{testimonial.quote}"
                 </p>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
                     <span className="text-white font-semibold text-lg">
                       {testimonial.author.charAt(0)}
                     </span>
@@ -455,7 +531,7 @@ const Home = () => {
           <div className="text-center">
             <Link
               to="/contact"
-              className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+              className="inline-flex items-center text-green-400 hover:text-green-300 font-semibold transition-colors"
             >
               Read More Testimonials
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -480,7 +556,7 @@ const Home = () => {
             {blogPosts.map((post, index) => (
               <article
                 key={index}
-                className="bg-gray-950 rounded-xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-300 group"
+                className="bg-gray-950 rounded-xl overflow-hidden border border-gray-800 hover:border-green-500/50 transition-all duration-300 group"
               >
                 {/* Featured Image */}
                 <div className="h-48 relative overflow-hidden">
@@ -491,14 +567,14 @@ const Home = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
-                    <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {post.category}
                     </span>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-green-400 transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-gray-400 mb-4 leading-relaxed">
@@ -508,7 +584,7 @@ const Home = () => {
                     <span className="text-gray-500 text-sm">{post.readTime}</span>
                     <Link
                       to={`/blog/${post.slug}`}
-                      className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors"
+                      className="inline-flex items-center text-green-400 hover:text-green-300 font-medium transition-colors"
                     >
                       Read More
                       <ArrowRight className="ml-1 h-4 w-4" />
@@ -522,7 +598,7 @@ const Home = () => {
           <div className="text-center">
             <Link
               to="/blog"
-              className="inline-flex items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center bg-gradient-to-r from-green-500 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
             >
               View All Articles
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -532,18 +608,18 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-900 to-purple-900">
+      <section className="py-24 bg-gradient-to-r from-green-900 to-purple-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
             Let's discuss how our expert IT solutions can help you achieve your business goals 
             and stay ahead of the competition.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center bg-white text-green-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
           >
             Start Your Project Today
             <ArrowRight className="ml-2 h-5 w-5" />
