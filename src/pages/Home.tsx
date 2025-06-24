@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Code, Smartphone, Search, Award, Clock, Users, FileText, Check, Star, Sparkles, Heart, Zap } from 'lucide-react';
+import { ArrowRight, Shield, Code, Smartphone, Search, Award, Clock, Users, FileText, Check, Star, Sparkles, Heart, Zap, CheckCircle, BadgeCheck } from 'lucide-react';
 import { getRecentBlogPosts } from '../data/blogPosts';
 
 const Home = () => {
@@ -133,20 +133,42 @@ const Home = () => {
     }
   ];
 
-  const testimonials = [
+  const blogPosts = getRecentBlogPosts(3);
+
+  const certifications = [
     {
-      quote: "Fasapro transformed our IT infrastructure with their expert ISO 27001 implementation. Their team's professionalism and attention to detail exceeded our expectations.",
-      author: "Sarah Johnson",
-      position: "CTO, TechCorp Solutions"
+      title: 'ISO/IEC 27001:2022 BSI Lead Implementer',
+      description: 'Certified lead implementer for information security management systems',
+      icon: Shield,
+      color: 'from-emerald-500 to-green-600',
+      bgColor: 'from-emerald-500/10 to-green-600/10',
+      borderColor: 'border-emerald-500/30'
     },
     {
-      quote: "The mobile app development project was delivered on time and within budget. Fasapro's communication and technical expertise made the entire process seamless.",
-      author: "Michael Chen",
-      position: "CEO, Digital Ventures"
+      title: 'MTCNA',
+      description: 'MikroTik Certified Network Associate for advanced network administration',
+      icon: Users,
+      color: 'from-blue-500 to-cyan-600',
+      bgColor: 'from-blue-500/10 to-cyan-600/10',
+      borderColor: 'border-blue-500/30'
+    },
+    {
+      title: 'NIST Framework',
+      description: 'National Institute of Standards and Technology cybersecurity framework expertise',
+      icon: BadgeCheck,
+      color: 'from-purple-500 to-violet-600',
+      bgColor: 'from-purple-500/10 to-violet-600/10',
+      borderColor: 'border-purple-500/30'
+    },
+    {
+      title: 'COBIT',
+      description: 'Control Objectives for Information and Related Technologies governance framework',
+      icon: Award,
+      color: 'from-orange-500 to-red-600',
+      bgColor: 'from-orange-500/10 to-red-600/10',
+      borderColor: 'border-orange-500/30'
     }
   ];
-
-  const blogPosts = getRecentBlogPosts(3);
 
   return (
     <div className="min-h-screen bg-gray-950">
@@ -483,59 +505,126 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Preview Section */}
-      <section className="py-24 bg-gray-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              What Our Clients Say
+      {/* Certifications & Frameworks Section */}
+      <section className="py-32 bg-gray-950 relative overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-emerald-500/5 to-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-purple-500/5 to-orange-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-48 h-48 bg-gradient-to-br from-green-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-full px-6 py-2 border border-emerald-500/20 mb-6">
+              <BadgeCheck className="h-4 w-4 text-emerald-400 mr-2" />
+              <span className="text-emerald-400 font-medium">Professional Certifications</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Certified Excellence & 
+              <span className="block bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Industry Frameworks
+              </span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Real feedback from satisfied clients who trust Fasapro with their IT needs.
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+              Our expertise is validated by industry-leading certifications and frameworks, 
+              ensuring the highest standards of security, governance, and technical excellence.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {testimonials.map((testimonial, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-green-500/50 transition-all duration-300"
+                className="group relative"
+                style={{
+                  animationDelay: `${index * 200}ms`
+                }}
               >
-                <div className="flex items-start mb-6">
-                  <div className="flex text-green-400 mr-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
+                {/* Background glow effect */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${cert.bgColor} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700 transform group-hover:scale-110`}></div>
+                
+                <div className={`relative bg-gray-900/80 backdrop-blur-sm rounded-3xl p-8 border ${cert.borderColor} transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 h-full group-hover:border-opacity-60`}>
+                  {/* Icon with enhanced styling */}
+                  <div className="relative mb-8 flex justify-center">
+                    <div className={`bg-gradient-to-r ${cert.color} w-20 h-20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-2xl`}>
+                      <cert.icon className="h-10 w-10 text-white" />
+                    </div>
+                    {/* Icon glow effect */}
+                    <div className={`absolute inset-0 bg-gradient-to-r ${cert.color} w-20 h-20 rounded-2xl opacity-0 group-hover:opacity-40 blur-xl transition-all duration-500`}></div>
                   </div>
-                </div>
-                <p className="text-gray-300 text-lg leading-relaxed mb-6 italic">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-semibold text-lg">
-                      {testimonial.author.charAt(0)}
-                    </span>
+
+                  {/* Content */}
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-emerald-400 group-hover:to-blue-400 group-hover:bg-clip-text transition-all duration-300 leading-tight">
+                      {cert.title}
+                    </h3>
+                    
+                    <p className="text-gray-400 mb-6 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 text-sm">
+                      {cert.description}
+                    </p>
+
+                    {/* Verification badge */}
+                    <div className="flex items-center justify-center">
+                      <div className={`flex items-center bg-gradient-to-r ${cert.bgColor} rounded-full px-4 py-2 border ${cert.borderColor} group-hover:border-opacity-60 transition-all duration-300`}>
+                        <CheckCircle className="h-4 w-4 text-emerald-400 mr-2" />
+                        <span className="text-emerald-400 text-sm font-medium">Verified</span>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-white font-semibold">{testimonial.author}</div>
-                    <div className="text-gray-400 text-sm">{testimonial.position}</div>
-                  </div>
+
+                  {/* Bottom accent line */}
+                  <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${cert.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 rounded-b-3xl`}></div>
                 </div>
               </div>
             ))}
           </div>
 
+          {/* Enhanced CTA section */}
           <div className="text-center">
-            <Link
-              to="/contact"
-              className="inline-flex items-center text-green-400 hover:text-green-300 font-semibold transition-colors"
-            >
-              Read More Testimonials
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            <div className="inline-flex flex-col items-center bg-gradient-to-r from-gray-900/80 to-gray-800/80 backdrop-blur-sm rounded-3xl p-12 border border-emerald-500/20 max-w-4xl">
+              <div className="flex items-center mb-6">
+                <div className="bg-gradient-to-r from-emerald-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mr-4">
+                  <Star className="h-8 w-8 text-white fill-current" />
+                </div>
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    Certified Professional Excellence
+                  </h3>
+                  <p className="text-gray-300">
+                    Trust in our validated expertise and industry-standard frameworks
+                  </p>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8 w-full">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-emerald-400 mb-2">4+</div>
+                  <div className="text-gray-400 text-sm">Professional Certifications</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-400 mb-2">100%</div>
+                  <div className="text-gray-400 text-sm">Compliance Standards</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-400 mb-2">5+</div>
+                  <div className="text-gray-400 text-sm">Years Experience</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-orange-400 mb-2">24/7</div>
+                  <div className="text-gray-400 text-sm">Expert Support</div>
+                </div>
+              </div>
+              
+              <Link
+                to="/contact"
+                className="inline-flex items-center bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-600 text-white px-10 py-4 rounded-2xl font-semibold hover:from-emerald-600 hover:via-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl group"
+              >
+                <Sparkles className="mr-3 h-5 w-5 group-hover:animate-spin" />
+                Partner with Certified Experts
+                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
